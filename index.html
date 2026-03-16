@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brain Challenge Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="game-card">
+      <div class="header">
+        <h1>Brain Challenge Game</h1>
+        <p class="subtitle">Memory Pattern + Math Quiz </p>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <span class="stat-label">Round</span>
+          <span class="stat-value" id="round">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Score</span>
+          <span class="stat-value" id="score">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Best</span>
+          <span class="stat-value" id="bestScore">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Lives</span>
+          <span class="stat-value" id="lives">3</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn">Start Game</button>
+        <button id="restartBtn">Restart</button>
+      </div>
+
+      <div class="message-box">
+        <p id="message">Press Start to begin the challenge.</p>
+      </div>
+
+      <div class="board-wrapper">
+        <div class="game-board">
+          <div class="circle" data-index="0"></div>
+          <div class="circle" data-index="1"></div>
+          <div class="circle" data-index="2"></div>
+          <div class="circle" data-index="3"></div>
+          <div class="circle" data-index="4"></div>
+          <div class="circle" data-index="5"></div>
+          <div class="circle" data-index="6"></div>
+          <div class="circle" data-index="7"></div>
+          <div class="circle" data-index="8"></div>
+        </div>
+      </div>
+
+      <div class="how-to-play">
+        <h3>How to Play</h3>
+        <ul>
+          <li>Watch the glowing circle pattern carefully.</li>
+          <li>Repeat the same order by clicking the circles.</li>
+          <li>Every 3 rounds, a bonus challenge appears.</li>
+          <li>Sometimes a surprise puzzle appears randomly.</li>
+          <li>Wrong answer costs 1 life.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz Modal -->
+  <div class="modal hidden" id="quizModal">
+    <div class="modal-content">
+      <h2 id="quizTitle">Bonus Challenge</h2>
+      <p id="quizQuestion">Question comes here</p>
+      <div class="options" id="quizOptions"></div>
+      <button class="close-btn hidden" id="nextChallengeBtn">Continue</button>
+    </div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div class="modal hidden" id="gameOverModal">
+    <div class="modal-content">
+      <h2>Game Over</h2>
+      <p id="gameOverText">You reached Round 0</p>
+      <button id="playAgainBtn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
